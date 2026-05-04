@@ -40,21 +40,6 @@ python .\sticks.py
 ```powershell
 python .\sticks_gui.py
 ```
-
-### Grid World Console Mode
-
-```powershell
-python .\grid_world_q_learning.py
-```
-
-### Grid World GUI Mode
-
-```powershell
-python .\grid_world_gui.py
-```
-
-Use `Step` to make one learning move at a time, `Auto` to animate repeated moves, and `Reset` to clear the learned Q values.
-
 ### Car Game Console Mode
 
 ```powershell
