@@ -42,14 +42,10 @@ python .\sticks_gui.py
 - Tkinter interface with visual sticks and score tracking
 
 ## Demo
-
-Placeholder for demo image:
+![Stick Game Demo](assets/sticks_gui.png)
 
 <<<<<<< HEAD
 =======
 
 >>>>>>> 9353ddd742ae4467698e4758e2c080cafec84776
-```text
-Add screenshot here later, for example:
-![Stick Game Demo](demo.png)
-```
+
