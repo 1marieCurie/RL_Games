@@ -45,6 +45,10 @@ python .\sticks_gui.py
 
 Placeholder for demo image:
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9353ddd742ae4467698e4758e2c080cafec84776
 ```text
 Add screenshot here later, for example:
 ![Stick Game Demo](demo.png)
