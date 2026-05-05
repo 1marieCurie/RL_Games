@@ -118,3 +118,5 @@ Training runs for 150 episodes with up to 400 steps per episode. Epsilon starts 
 - replay-memory style transition storage
 - local texture atlas in `public/textures/` to avoid CORS problems
 
+## MetaCar Game Demo
+![MetaCar Demo](assets/metacar_demo.png)
