@@ -7,6 +7,7 @@ Small reinforcement-learning examples with:
 - an interactive Grid World visualizer in `grid_world_gui.py`
 - a car-themed Q-learning game in `car_game_Q_learning.py`
 - a car-themed Q-learning GUI in `car_game_Q_learning_gui.py`
+- a browser-based Metacar DQN demo in `q_learning_nn.html`
 
 ## Stick Game Rules
 
@@ -22,6 +23,9 @@ Small reinforcement-learning examples with:
 - `grid_world_gui.py`: Tkinter interface for stepping through Grid World Q-learning
 - `car_game_Q_learning.py`: car-themed Q-learning environment where the agent learns a route home
 - `car_game_Q_learning_gui.py`: animated Tkinter GUI for the car Q-learning game
+- `q_learning_nn.html`: browser-based Metacar environment trained with a DQN-style neural Q-network
+- `metacar.min.js`: local Metacar library used by `q_learning_nn.html`
+- `public/textures/`: local Metacar texture atlas used to avoid remote CORS issues
 
 ## Run
 
@@ -40,6 +44,7 @@ python .\sticks.py
 ```powershell
 python .\sticks_gui.py
 ```
+
 ### Car Game Console Mode
 
 ```powershell
@@ -53,6 +58,22 @@ python .\car_game_Q_learning_gui.py
 ```
 
 Use `Step` to watch one Q-learning update, `Auto` to run animated training, and `Reset` to restart learning.
+
+### Metacar DQN Browser Demo
+
+Serve the project folder with a local HTTP server, then open the page in a browser:
+
+```powershell
+python -m http.server 5501
+```
+
+Open:
+
+```text
+http://127.0.0.1:5501/q_learning_nn.html
+```
+
+Use `Train` to collect replay-memory experiences and train the neural Q-network, then use `Play` to run the learned policy.
 
 ## Stick Game Features
 
@@ -82,4 +103,18 @@ The GUI visualizes the learning process with an animated car, animated people, a
 ## Car Game Demo
 
 ![Car Q-Learning Demo](assets/car_q_learning.png)
+
+## Metacar DQN Description
+
+The Metacar demo runs in the browser with Pixi.js for rendering and TensorFlow.js for the neural network. The agent observes the Metacar state, chooses actions with an epsilon-greedy policy, stores transitions in replay memory, and trains a DQN-style model that predicts Q-values for the available actions.
+
+Training runs for 150 episodes with up to 400 steps per episode. Epsilon starts at `1.0` for exploration and decays toward `0.1`; after training, `Play` uses `eps = 0.0` to follow the learned policy.
+
+## Metacar DQN Features
+
+- browser-rendered Metacar driving environment
+- TensorFlow.js neural Q-network with one hidden dense layer
+- epsilon-greedy action selection
+- replay-memory style transition storage
+- local texture atlas in `public/textures/` to avoid CORS problems
 
